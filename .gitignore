@@ -18,7 +18,11 @@
 *.zip
 *.tar.gz
 *.rar
+<<<<<<< HEAD
 targer
+=======
+/targer/
+>>>>>>> 6a281e0f058b84f16c6a3e41a78dfa011b446590
 .idea
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
