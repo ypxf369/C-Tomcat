@@ -12,7 +12,7 @@ public class CResponse {
     }
 
     public void write(String content) throws IOException {
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         sb.append("HTTP/1.1 200 OK\n")
                 .append("Content-Type: text/html")
                 .append("\r\n")

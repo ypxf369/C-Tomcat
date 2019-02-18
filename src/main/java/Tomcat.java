@@ -36,6 +36,7 @@ public class Tomcat {
 
             while (true) {
                 Socket socket = serverSocket.accept();
+
                 InputStream inputStream = socket.getInputStream();
                 OutputStream outputStream = socket.getOutputStream();
 
@@ -48,7 +49,15 @@ public class Tomcat {
                 socket.close();
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
+        } finally {
+            if (serverSocket != null) {
+                try {
+                    serverSocket.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -59,6 +68,9 @@ public class Tomcat {
     }
 
     private void dispatch(CRequest request, CResponse response) {
+        if (request.getUrl().equalsIgnoreCase("/favicon.ico")) {
+            return;
+        }
         String clazz = urlServletMap.get(request.getUrl());
 
         try {

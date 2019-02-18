@@ -29,4 +29,12 @@ public class CRequest {
     public String getMethod() {
         return method;
     }
+
+    @Override
+    public String toString() {
+        return "CRequest{" +
+                "url='" + url + '\'' +
+                ", method='" + method + '\'' +
+                '}';
+    }
 }

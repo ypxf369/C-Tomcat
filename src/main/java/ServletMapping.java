@@ -3,18 +3,18 @@
  * servlet 配置
  */
 public class ServletMapping {
-    private String servleetName;
+    private String servletName;
     private String url;
     private String clazz;
 
-    public ServletMapping(String servleetName, String url, String clazz) {
-        this.servleetName = servleetName;
+    public ServletMapping(String servletName, String url, String clazz) {
+        this.servletName = servletName;
         this.url = url;
         this.clazz = clazz;
     }
 
     public String getServleetName() {
-        return servleetName;
+        return servletName;
     }
 
     public String getUrl() {
@@ -26,7 +26,7 @@ public class ServletMapping {
     }
 
     public void setServleetName(String servleetName) {
-        this.servleetName = servleetName;
+        this.servletName = servleetName;
     }
 
     public void setUrl(String url) {
