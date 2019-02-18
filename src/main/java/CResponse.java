@@ -1,0 +1,26 @@
+import java.io.IOException;
+import java.io.OutputStream;
+
+/**
+ * Created by yepeng on 2019/02/18.
+ */
+public class CResponse {
+    private OutputStream outputStream;
+
+    public CResponse(OutputStream outputStream) {
+        this.outputStream = outputStream;
+    }
+
+    public void write(String content) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        sb.append("HTTP/1.1 200 OK\n")
+                .append("Content-Type: text/html")
+                .append("\r\n")
+                .append("<html><body>")
+                .append(content)
+                .append("</body></html>");
+
+        outputStream.write(sb.toString().getBytes());
+        outputStream.close();
+    }
+}
